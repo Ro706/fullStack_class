@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+h1{
+    font-size: 200px;
+    color: #333;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 1em;
+    color:black;
+}
+
+@media screen and (max-width: 768px){
+    body{
+        justify-content: center;
+    }
+    h1{
+        font-size: 60px;
+        color:red;
+    }
+}
+
+@media screen and (max-width: 356px){
+    body{
+        justify-content: center;
+    }
+    h1{
+        font-size: 40px;
+        color:blue;
+    }
+    
+}
