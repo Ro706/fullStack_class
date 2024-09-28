@@ -74,7 +74,7 @@ nav li :first-child{
         display: block;
     }
     .sidebar{
-        display: flex;
+        display: none;
     }
 
     nav li :first-child{
