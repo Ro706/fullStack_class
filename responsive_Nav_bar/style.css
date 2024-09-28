@@ -1,0 +1,61 @@
+/* Style the navigation bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Change the background color as needed */
+    color: white; /* Change the text color as needed */
+    padding: 10px 20px;
+}
+
+/* Style the sidebar menu */
+ul.sidebar {
+    list-style: none;
+    display: none;
+}
+
+ul.sidebar li {
+    margin-right: 10px;
+}
+
+ul.sidebar li a {
+    color: white; /* Change the text color as needed */
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* Style the normal menu */
+ul.normal {
+    list-style: none;
+    display: flex;
+}
+
+ul.normal li {
+    margin-right: 10px;
+}
+
+ul.normal li a {
+    color: white; /* Change the text color as needed */
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* Hide elements on mobile */
+.hideOnMobile {
+    display: block; /* Change to 'none' to hide on mobile */
+}
+
+/* Responsive design */
+@media only screen and (max-width: 600px) {
+    ul.normal {
+        display: none; /* Hide the normal menu on small screens */
+    }
+
+    .hideOnMobile {
+        display: none; /* Hide elements with this class on mobile */
+    }
+    ul.sidebar {
+        list-style: none;
+        display: flex;
+    }
+}
