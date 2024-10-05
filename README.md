@@ -52,4 +52,34 @@ Navigate to the individual directories to view the various examples of responsiv
 - **Bootstrap**
 - **JavaScript**
 
+
+## Bootstrap 
+Padding Classes : Similarly, padding classes use the format p{t|r|b|l|x|y}-{size}:
+
+- p – for padding on all sides
+- pt – for padding-top
+- pr – for padding-right
+- pb – for padding-bottom
+- pl – for padding-left
+- px – for padding-left and padding-right
+- py – for padding-top and padding-bottom
+
+Margin Classes : The margin classes in Bootstrap use the format m{t|r|b|l|x|y}-{size}:
+ 
+- m – for all sides
+- mt – for margin-top
+- mr – for margin-right
+- mb – for margin-bottom
+- ml – for margin-left
+- mx – for margin-left and margin-right
+- my – for margin-top and margin-bottom
+- The {size} can be:
+ 
+- 0 – for no margin
+- 1 – for 0.25rem margin
+- 2 – for 0.5rem margin
+- 3 – for 1rem margin
+- 4 – for 1.5rem margin
+- 5 – for 3rem margin
+- auto – for automatic margin\
 ---
