@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>bulb_on_off</title>
+</head>
+<body>
+    <img id="bulb_on_img" src="./bulb_on.png" alt="bulb_on">
+    <img id="bulb_off_img" src="./bulb_off.png" alt="bulb_off">
+    <div>
+        <span id="text">Bulb is On</span>
+        <button id="bulb_on" class="btn">bulb_on</button>
+        <button id="bulb_off" class="btn">bulb_off</button>
+    </div>
+    <script>
+        let bulbOnButton = document.getElementById('bulb_on');
+        let bulbOffButton = document.getElementById('bulb_off');
+        let bulbOnImg = document.getElementById('bulb_on_img');
+        let bulbOffImg = document.getElementById('bulb_off_img');
+        let text = document.getElementById('text');
+    
+        bulbOnButton.addEventListener('click', () => {
+            bulbOnImg.style.display = 'block';
+            bulbOffImg.style.display = 'none';
+            bulbOnButton.style.background = '#007bff'; 
+            bulbOffButton.style.background = '#6c757d';
+            bulbOffButton.style.color = 'white'; 
+            text.innerHTML = 'Bulb is On';
+        });
+    
+        bulbOffButton.addEventListener('click', () => {
+            bulbOnImg.style.display = 'none';
+            bulbOffImg.style.display = 'block';
+            bulbOffButton.style.background = '#007bff'; 
+            bulbOnButton.style.background = '#6c757d'; 
+            bulbOnButton.style.color = 'white';
+            text.innerHTML = 'Bulb is Off';
+        });
+    </script>
+   </body>
+</html>

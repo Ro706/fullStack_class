@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>bulb_on_off</title>
+</head>
+<body>
+    <img id="bulb_on_img" src="./bulb_on.png" alt="bulb_on" style="display: block;">
+    <img id="bulb_off_img" src="./bulb_off.png" alt="bulb_off" style="display: none;">
+    <div>
+        <span id="text">Bulb is On</span>
+        <button id="toggle_bulb" class="btn" style="background: #007bff; color: white;">Turn Off</button>
+    </div>
+    <script>
+        let toggleButton = document.getElementById('toggle_bulb');
+        let bulbOnImg = document.getElementById('bulb_on_img');
+        let bulbOffImg = document.getElementById('bulb_off_img');
+        let text = document.getElementById('text');
+    
+        toggleButton.addEventListener('click', () => {
+            if (bulbOnImg.style.display === 'block') {
+                bulbOnImg.style.display = 'none';
+                bulbOffImg.style.display = 'block';
+                toggleButton.style.background = '#6c757d';
+                toggleButton.innerHTML = 'Turn On';
+                text.innerHTML = 'Bulb is Off';
+            } else {
+                bulbOnImg.style.display = 'block';
+                bulbOffImg.style.display = 'none';
+                toggleButton.style.background = '#007bff';
+                toggleButton.innerHTML = 'Turn Off';
+                text.innerHTML = 'Bulb is On';
+            }
+        });
+    </script>
+</body>
+</html>
