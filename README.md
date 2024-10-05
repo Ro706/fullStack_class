@@ -81,5 +81,5 @@ Margin Classes : The margin classes in Bootstrap use the format m{t|r|b|l|x|y}-{
 - 3 – for 1rem margin
 - 4 – for 1.5rem margin
 - 5 – for 3rem margin
-- auto – for automatic margin\
+- auto – for automatic margin
 ---
