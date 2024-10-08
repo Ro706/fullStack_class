@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomb Pager</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button, input {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #timer {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bomb Pager</h1>
+        <button id="startButton">Start Countdown</button>
+        <div id="timer">Time remaining: 10 seconds</div>
+        <input type="text" id="passwordInput" placeholder="Enter password">
+        <button id="submitPassword">Submit Password</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        let startButton = document.getElementById('startButton');
+        let submitPasswordButton = document.getElementById('submitPassword');
+        let timerDisplay = document.getElementById('timer');
+        let passwordInput = document.getElementById('passwordInput');
+        let resultDisplay = document.getElementById('result');
+        let countdown;
+        let isRed = true;
+        let timeLeft = 10;
+        const correctPassword = 'Ro706';
+
+        startButton.addEventListener('click', () => {
+            timeLeft = 10;
+            timerDisplay.innerHTML = `Time remaining: ${timeLeft} seconds`;
+            resultDisplay.style.display = 'none';
+            passwordInput.value = '';
+            passwordInput.style.display = 'block';
+            submitPasswordButton.style.display = 'block';
+
+            countdown = setInterval(() => {
+                timeLeft--;
+                timerDisplay.innerHTML = `Time remaining: ${timeLeft} seconds`;
+
+                // Alternate background color between red and blue
+                document.body.style.backgroundColor = isRed ? 'red' : 'blue';
+                isRed = !isRed;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    checkPassword();
+                }
+            }, 1000);
+        });
+
+        submitPasswordButton.addEventListener('click', checkPassword);
+
+        function checkPassword() {
+            const userPassword = passwordInput.value;
+            passwordInput.style.display = 'none';
+            submitPasswordButton.style.display = 'none';
+
+            if (userPassword === correctPassword) {
+                clearInterval(countdown); // Stop the timer
+                resultDisplay.innerHTML = 'Bomb Defused!';
+                resultDisplay.style.color = 'green';
+                document.body.style.backgroundColor = 'blue'; // Set background color to blue
+            } else {
+                resultDisplay.innerHTML = 'Boom!';
+                resultDisplay.style.color = 'red';
+                document.body.style.backgroundColor = 'red'; // Set background color to red
+            }
+            resultDisplay.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

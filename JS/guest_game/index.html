@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Random Number</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #feedback {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Random Number</h1>
+        <p>Guess a number between 1 and 100</p>
+        <input type="number" id="guess" min="1" max="100">
+        <button id="submitGuess">Submit Guess</button>
+        <div id="feedback"></div>
+    </div>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let submitGuessButton = document.getElementById('submitGuess');
+        let feedback = document.getElementById('feedback');
+
+        submitGuessButton.addEventListener('click', () => {
+            let userGuess = parseInt(document.getElementById('guess').value);
+            if (userGuess === randomNumber) {
+                feedback.innerHTML = 'Congratulations! You guessed the correct number.';
+                feedback.style.color = 'green';
+            } else if (userGuess > randomNumber) {
+                feedback.innerHTML = 'Too high! Try again.';
+                feedback.style.color = 'red';
+            } else {
+                feedback.innerHTML = 'Too low! Try again.';
+                feedback.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
