@@ -45,7 +45,7 @@
         <button id="startButton">Start Countdown</button>
         <div id="timer">Time remaining: 10 seconds</div>
         <input type="text" id="passwordInput" placeholder="Enter password">
-        <button id="submitPassword">Submit Password</button>
+        <button id="submitPassword">Defused</button>
         <div id="result"></div>
     </div>
     <script>
@@ -60,6 +60,9 @@
         const correctPassword = 'Ro706';
 
         startButton.addEventListener('click', () => {
+            if (countdown) {
+                clearInterval(countdown); // Clear any existing timer
+            }
             timeLeft = 10;
             timerDisplay.innerHTML = `Time remaining: ${timeLeft} seconds`;
             resultDisplay.style.display = 'none';
