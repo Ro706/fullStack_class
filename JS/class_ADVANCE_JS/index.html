@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+    </div>
+    <script>
+        let api = 'https://gorest.co.in/public/v2/users';
+        let root = document.getElementById('root');
+        root.innerHTML = '<h1>Hello World</h1>';
+
+        // fetch(api)
+        // .then(response => response.json())
+        // .then(data => {
+        //     console.log(data);
+        //     data.forEach((user) => {
+        //         let card = document.createElement('div');
+        //         card.className = 'card';
+        //         let name = document.createElement('h3');
+        //         let email = document.createElement('p');
+        //         name.innerHTML = user.name;
+        //         email.innerHTML = user.email;
+        //         card.appendChild(name);
+        //         card.appendChild(email);
+        //         root.appendChild(card);
+        //     });
+        // })
+        // .catch(error => {
+        //     console.error('Error fetching data:', error);
+        //     let errorMessage = document.createElement('p');
+        //     errorMessage.style.color = 'red';
+        //     errorMessage.innerHTML = 'Failed to load user data. Please try again later.';
+        //     root.appendChild(errorMessage);
+        // });
+        const fetchUerDetails=async()=>{
+            let response = await fetch(api);
+            let data = await response.json();
+            console.log(data);
+            data.forEach((user) => {
+                let card = document.createElement('div');
+                card.className = 'card';
+                let name = document.createElement('h3');
+                let email = document.createElement('p');
+                name.innerHTML = user.name;
+                email.innerHTML = user.email;
+                card.appendChild(name);
+                card.appendChild(email);
+                root.appendChild(card);
+            });
+
+        }
+        fetchUerDetails();
+    </script>
+</body>
+</html>
