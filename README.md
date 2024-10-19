@@ -28,6 +28,8 @@ Explore the live versions of each component:
 5. **Class 2.0 Layout**  
    [View Demo](https://ro706.github.io/fullStack_class/class2.0)
 
+6. **TODO list**
+   [View Demo](https://ro706.github.io/fullStack_class/TODO)
 ## Features
 
 - **Responsive Design**: Ensures the layout adapts to different screen sizes.
