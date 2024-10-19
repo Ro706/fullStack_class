@@ -4,7 +4,6 @@ let userInputEl = document.getElementById("userInput");
 
 
 let todoList = [
-
     {
         title: "HTML",
         id: 1
@@ -17,7 +16,6 @@ let todoList = [
         title: "Bootstrap",
         id: 3
     }
-
 ]
 
 
@@ -108,15 +106,19 @@ for (each of todoList) {
 function onAddTodo() {
 
     console.log(userInputEl.value);
+    if (userInputEl.value == "") {
+        alert("Please enter a todo");
+        return;
+    }else{
+        let newTodo = {
+            title: userInputEl.value,
+            id: todoList.length + 1
+        }
 
-    let newTodo = {
-        title: userInputEl.value,
-        id: todoList.length + 1
+        createAndAppendTodo(newTodo);
+        todoList.push(newTodo);
+
+        console.log(todoList);
     }
-
-    createAndAppendTodo(newTodo);
-    todoList.push(newTodo);
-
-    console.log(todoList);
 
 }
