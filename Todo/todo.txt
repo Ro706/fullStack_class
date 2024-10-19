@@ -1,0 +1,6 @@
+[+] create folder
+[+] create index.html,index.js,style.css
+[+] using bootstrap (add css and js tag)
+[+] add input option where we take the tast
+[+] add button for submitting
+[+] add array
